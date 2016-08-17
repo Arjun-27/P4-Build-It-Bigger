@@ -1,24 +1,16 @@
 package com.udacity.gradle.builditbigger;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
-
-import java.util.concurrent.ExecutionException;
-
-import jokes.com.getjokes.JokesActivity;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -27,8 +19,7 @@ public class MainActivityFragment extends Fragment {
 
     InterstitialAd mInterstitialAd;
     Button joke = null;
-    String aJoke;
-    EndpointsAsyncTask endpointsAsyncTask;
+
     AdView mAdView;
 
     public MainActivityFragment() {
@@ -37,7 +28,7 @@ public class MainActivityFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mInterstitialAd = new InterstitialAd(getActivity());
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId(getString(R.string.R_string_unit_id));
     }
 
     @Override
